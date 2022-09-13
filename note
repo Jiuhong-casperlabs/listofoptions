@@ -1,0 +1,31 @@
+casper-client put-deploy --chain-name casper-test \
+-n http://52.70.214.247:7777 \
+--secret-key /Users/jh/keys/test1/secret_key.pem \
+--session-path contract/target/wasm32-unknown-unknown/release/contract.wasm \
+--payment-amount 30000000000 
+
+uref-cea2301c46b1e6ae17ad5522cbbd7e5714094a8aec0a98673d3f54dd45ba4180-007
+
+casper-client query-state \
+-n http://52.70.214.247:7777 \
+-s c18ecff76e937185fe033d78806311164e0d6b3c0cf0f81d4cff6007b09c301a \
+-k uref-cea2301c46b1e6ae17ad5522cbbd7e5714094a8aec0a98673d3f54dd45ba4180-007
+
+{
+  "id": 2347163872707195988,
+  "jsonrpc": "2.0",
+  "result": {
+    "api_version": "1.4.8",
+    "block_header": null,
+    "merkle_proof": "[35822 hex chars]",
+    "stored_value": {
+      "CLValue": {
+        "bytes": "0400000000010500000068656c6c6f00000101010100",
+        "cl_type": {
+          "List": "Any"
+        },
+        "parsed": null
+      }
+    }
+  
+  
